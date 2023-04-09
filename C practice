@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+    int i, *min, *max, arr[10]={1,2,3,-300,400,5,6,7,8,9};
+    printf("The array is:\n");
+    for (i=0;i<10;i++)
+        printf("%d\t",arr[i]);
+    min=max=arr;
+    for(i=1;i<10;i++)
+    {
+        if(arr[i]<*min)
+            min=&arr[i];
+        if(arr[i]>*max)
+            max=&arr[i];
+    }
+    printf("\nThe minimum value is %d\n",*min);
+    printf("\nThe maximum value is %d\n",*max);
+}
